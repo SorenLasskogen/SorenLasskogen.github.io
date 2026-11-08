@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TACET VR — Søren Lasskogen</title>
+  <meta name="description" content="An immersive VR experience extending the short film TACET, built in Unity for Meta Quest 3.">
+  <meta name="theme-color" content="#0F0F0F">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Søren Lasskogen</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#projects" aria-current="true">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="case-intro container">
+      <a class="back-link" href="../index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+      <p class="eyebrow" style="margin-top:48px"><span class="accent">02</span> — Virtual reality · 2025</p>
+      <h1>TACET VR</h1>
+      <p class="lede">Turning a linear short film into an interactive VR experience — and testing whether it changes how audiences understand the story.</p>
+      <ul class="tags" aria-label="Tools used">
+        <li>Unity</li><li>C#</li><li>Meta Quest 3</li><li>XR Interaction Toolkit</li><li>FMOD</li><li>Blender</li>
+      </ul>
+    </section>
+
+    <div class="container">
+      <figure class="case-hero">
+        <img src="../assets/img/tacet-bedroom.jpg" alt="A dim, snow-covered bedroom scene in TACET VR, lit by a single glowing frame on a bedside table." width="1600" height="899">
+      </figure>
+
+      <dl class="facts">
+        <div><dt>Context</dt><dd>5th-semester project, Medialogy — theme: Mixed Reality</dd></div>
+        <div><dt>Timeline</dt><dd>Sep – Dec 2025</dd></div>
+        <div><dt>Team</dt><dd>6 people, with director Ahmed El Kholy</dd></div>
+        <div><dt>Supervision</dt><dd>Henrik Schønau Fog</dd></div>
+        <div><dt>Built with</dt><dd>Unity, C#, XR Interaction Toolkit, URP, FMOD, Meta XR Audio SDK, Blender, Substance Painter</dd></div>
+      </dl>
+    </div>
+
+    <article class="case-body container narrow">
+      <h2>The problem</h2>
+      <p>Film gives a director tight control over what the audience sees. VR hands that control to the viewer, who can look anywhere and move freely. <em>TACET</em> is a short film about Adam, caught in a car full of peers whose tense hierarchy weighs on him, while visions of his boss, his mother and an oracle-like figure guide him towards the end of his suffering.</p>
+      <p>We asked: <strong>can a linear film be extended into an interactive VR experience — and does that bring the audience’s interpretation closer to the director’s intent, or dilute it?</strong></p>
+
+      <h2>My role</h2>
+      <p>One of six in the project group, working with the film’s director throughout.</p>
+      <p class="todo">Describe what you personally did — e.g. scenes, assets, audio, interaction or the evaluation you were responsible for.</p>
+
+      <h2>How we built it</h2>
+      <p>We worked from the director’s guiding document, a moodboard and a storyboard to design interactive narrative beats that extend the film rather than retell it. TACET VR runs natively on Meta Quest 3 with six degrees of freedom, built in Unity with the XR Interaction Toolkit and a custom sequencing system that plays the narrative beats in order.</p>
+
+      <figure class="figure figure--pair">
+        <div class="figure__grid">
+          <img src="../assets/img/tacet-hands.jpg" alt="Pale hands reaching out of total darkness towards the viewer." loading="lazy" width="1600" height="886">
+          <img src="../assets/img/tacet-forest.jpg" alt="A car parked in a barren landscape surrounded by tall, jagged tree trunks." loading="lazy" width="1600" height="905">
+        </div>
+        <figcaption>Scenes from TACET VR — light, sound and space guide the viewer instead of camera cuts.</figcaption>
+      </figure>
+
+      <ul class="list">
+        <li><strong>Guiding attention.</strong> With no camera to frame shots, we used lighting, spatial audio cues and environmental storytelling — objects and spaces that tell the story without dialogue.</li>
+        <li><strong>Custom assets.</strong> Props and animations were modelled in Blender and textured in Substance Painter to match the film’s tone.</li>
+        <li><strong>Spatial audio.</strong> Sound was built in FMOD, with the Meta XR Audio SDK handling HRTF spatialisation.</li>
+        <li><strong>Performance and comfort.</strong> Running standalone on a headset meant strict budgets — static geometry, simple URP shaders and requirements to limit cybersickness.</li>
+      </ul>
+
+      <figure class="figure">
+        <img src="../assets/img/placeholder.svg" alt="Placeholder — replace with a storyboard, moodboard or behind-the-scenes image." loading="lazy" width="1600" height="1000">
+        <figcaption>Placeholder — swap in the storyboard, moodboard or a photo from testing.</figcaption>
+      </figure>
+
+      <h2>Outcome</h2>
+      <p>After usability testing with SUS and VRSUQ, we ran an A/B study: one group experienced TACET VR, the other watched the story linearly. We used qualitative interviews and the Igroup Presence Questionnaire (IPQ).</p>
+      <p>VR did not significantly improve how accurately people interpreted the narrative — but it clearly changed how they engaged with it. VR participants described the story from an embodied, first-person perspective, while linear viewers stayed observers. High presence scores suggest interactive VR can change how audiences engage with a story while preserving the director’s message.</p>
+      <blockquote>
+        “When you started completing these missions, it dawned on me that I was participating in this character’s purpose.”
+        <footer>— Study participant, VR group</footer>
+      </blockquote>
+      <p class="todo">Add the grade (if you want to share it) and one or two things you learned.</p>
+
+      <h2>Video</h2>
+      <!-- Upload the AV production to YouTube or Vimeo, then replace the placeholder below with e.g.:
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="TACET VR video" allow="fullscreen" loading="lazy"></iframe></div>
+      -->
+      <div class="video-frame video-frame--placeholder">
+        <p>Video placeholder — upload the AV production to YouTube or Vimeo and embed it here.</p>
+      </div>
+
+      <h2>Links</h2>
+      <div class="case-links">
+        <a class="btn" href="https://github.com/JacobVigsoe/P5-VRCinematic" target="_blank" rel="noopener">Code on GitHub <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="../assets/reports/tacet-vr-report.pdf" target="_blank" rel="noopener">Report (PDF) <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="#" aria-disabled="true">Video — coming soon</a>
+      </div>
+    </article>
+
+    <div class="container">
+      <nav class="next-project" aria-label="Next project">
+        <a href="walking-on-water.html">
+          <p class="eyebrow">Next project</p>
+          <strong>Walking on Water <span aria-hidden="true">→</span></strong>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> Søren Lasskogen</span>
+      <a href="mailto:sorenlasskogen@gmail.com">sorenlasskogen@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

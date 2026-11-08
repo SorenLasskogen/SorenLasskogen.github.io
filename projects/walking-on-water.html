@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walking on Water — Søren Lasskogen</title>
+  <meta name="description" content="An interactive audiovisual floor projection using YOLO tracking, TouchDesigner and Ableton Live.">
+  <meta name="theme-color" content="#0F0F0F">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Søren Lasskogen</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#projects" aria-current="true">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="case-intro container">
+      <a class="back-link" href="../index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+      <p class="eyebrow" style="margin-top:48px"><span class="accent">03</span> — Interactive installation · 2025</p>
+      <h1>Walking on Water</h1>
+      <p class="lede">An audiovisual floor you can walk on: a bubble of light follows you, and your position and voice shape the water and the sound around you.</p>
+      <ul class="tags" aria-label="Tools used">
+        <li>Python</li><li>YOLO11</li><li>OpenCV</li><li>TouchDesigner</li><li>Ableton Live</li><li>OSC</li>
+      </ul>
+    </section>
+
+    <div class="container">
+      <dl class="facts">
+        <div><dt>Context</dt><dd>Exam project, AHCI course, Medialogy</dd></div>
+        <div><dt>Timeline</dt><dd>Autumn 2025</dd></div>
+        <div><dt>Team</dt><dd>3 people</dd></div>
+        <div><dt>Built with</dt><dd>Python, Ultralytics YOLO11, ByteTrack, OpenCV, python-osc, TouchDesigner, Ableton Live, Max for Live</dd></div>
+        <div><dt>Hardware</dt><dd>2 mini projectors, ceiling webcam, SM58 microphone, studio monitors</dd></div>
+      </dl>
+    </div>
+
+    <article class="case-body container narrow">
+      <figure class="figure figure--pair" style="margin-top:0">
+        <div class="figure__grid">
+          <img src="../assets/img/wow-floor-1.jpg" alt="A person standing in a dark room on a glowing blue and green floor projection that swirls like water." width="950" height="1024">
+          <img src="../assets/img/wow-floor-2.jpg" alt="The same person moving across the projection, with the light pattern shifting beneath their feet." width="969" height="1025">
+        </div>
+        <figcaption>The floor projection reacts to where you stand — and to how loud you are.</figcaption>
+      </figure>
+
+      <h2>The problem</h2>
+      <p>After building a framework for interactive installations the semester before, we wanted to try a full-body experience. The goal was a multimodal system with two inputs — your position and your voice — and two outputs — a projection and a soundscape — inspired by works like teamLab’s interactive rooms.</p>
+
+      <h2>My role</h2>
+      <p>One of three in the group, building a system that spans computer vision, real-time visuals and live sound.</p>
+      <p class="todo">Describe what you personally did — e.g. the Python tracking, the TouchDesigner patch, the Ableton setup or the physical install.</p>
+
+      <h2>How we built it</h2>
+      <h3>Tracking</h3>
+      <p>A webcam mounted on a laser-cut bracket in the ceiling looks straight down, so no 3D-to-2D conversion is needed. A Python program runs Ultralytics YOLO11 (the nano model, for frame rate) with ByteTrack to follow people between frames. It takes the centre of each bounding box, rescales it for each program — −1 to 1 for TouchDesigner, 1 to 100 for Ableton Live — and sends it as OSC messages over a local hotspot to two computers.</p>
+      <h3>Visuals</h3>
+      <p>In TouchDesigner, a bubble follows the user across the floor. The microphone level, smoothed with a one-euro filter, drives the bubble’s size; past a threshold it sends out a pulse. Noise operators modulated by LFOs, then displaced, edge-detected and bloomed, give the water its look. Two overlapping projectors fill in each other’s shadows.</p>
+      <h3>Sound</h3>
+      <p>In Ableton Live, a Max for Live OSC receiver maps the user’s position onto two XY pads over an underwater recording: an EQ (x = filter frequency, y = resonance) and a tremolo in ring-modulator mode (x = coarse, y = LFO rate).</p>
+
+      <figure class="figure">
+        <img src="../assets/img/placeholder.svg" alt="Placeholder — replace with the system diagram or the TouchDesigner network." loading="lazy" width="1600" height="1000">
+        <figcaption>Placeholder — swap in the data-flow diagram or a screenshot of the TouchDesigner patch.</figcaption>
+      </figure>
+
+      <h2>Outcome</h2>
+      <p>The installation worked as intended, but exposed a classic trade-off: the small projectors needed darkness, while the camera needed light to track reliably. Tracker ID switches also meant scaling down from three simultaneous users to one.</p>
+      <p>A second version moved the projection to a wall and tracked hands instead of bodies. With a brighter projector and well-lit participants, it performed far better and gave more parameters to play with. Next steps we identified: a depth or lidar camera, running the tracking inside TouchDesigner to cut latency, and individual lavalier mics so each person gets their own voice-driven bubble.</p>
+      <p class="todo">Add the grade (if you want to share it) and one or two things you learned.</p>
+
+      <h2>Video</h2>
+      <!-- Upload the AV production to YouTube or Vimeo, then replace the placeholder below with e.g.:
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Walking on Water video" allow="fullscreen" loading="lazy"></iframe></div>
+      -->
+      <div class="video-frame video-frame--placeholder">
+        <p>Video placeholder — upload the AV production to YouTube or Vimeo and embed it here.</p>
+      </div>
+
+      <h2>Links</h2>
+      <div class="case-links">
+        <a class="btn" href="../assets/reports/walking-on-water-report.pdf" target="_blank" rel="noopener">Report (PDF) <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="#" aria-disabled="true">Video — coming soon</a>
+      </div>
+    </article>
+
+    <div class="container">
+      <nav class="next-project" aria-label="Next project">
+        <a href="ipasif.html">
+          <p class="eyebrow">Next project</p>
+          <strong>IPASIF <span aria-hidden="true">→</span></strong>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> Søren Lasskogen</span>
+      <a href="mailto:sorenlasskogen@gmail.com">sorenlasskogen@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

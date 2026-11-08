@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpellBound &amp; the O.R.B.S. — Søren Lasskogen</title>
+  <meta name="description" content="Bachelor thesis: custom tangible controllers and a co-op game designed to make players collaborate.">
+  <meta name="theme-color" content="#0F0F0F">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Søren Lasskogen</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#projects" aria-current="true">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="case-intro container">
+      <a class="back-link" href="../index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+      <p class="eyebrow" style="margin-top:48px"><span class="accent">01</span> — Bachelor thesis · 2026</p>
+      <h1>SpellBound &amp; the O.R.B.S.</h1>
+      <p class="lede">Together through the medieval hellscape: how tangible user interfaces promote collaboration in video games.</p>
+      <ul class="tags" aria-label="Tools used">
+        <li>Unity</li><li>C#</li><li>ESP32</li><li>ESP-NOW</li><li>3D printing</li><li>User study</li>
+      </ul>
+    </section>
+
+    <div class="container">
+      <figure class="case-hero">
+        <img src="../assets/img/spellbound-game.jpg" alt="SpellBound gameplay: a glowing spell in front of a dark castle, with health and symbol indicators at the top." width="1600" height="838">
+      </figure>
+
+      <dl class="facts">
+        <div><dt>Context</dt><dd>Bachelor thesis, Medialogy (6th semester)</dd></div>
+        <div><dt>Timeline</dt><dd>Feb – May 2026</dd></div>
+        <div><dt>Team</dt><dd>6 people</dd></div>
+        <div><dt>Supervision</dt><dd>Ivan Adriyanov Nikolov, Daniel Overholt</dd></div>
+        <div><dt>Built with</dt><dd>Unity, C#, M5Stamp S3 (ESP32), ESP-NOW, rotary encoders, haptics, LED strips, 3D printing</dd></div>
+      </dl>
+    </div>
+
+    <article class="case-body container narrow">
+      <h2>The problem</h2>
+      <p>Tangible user interfaces — physical objects you interact with directly — are known to support collaboration in learning settings, but they are rarely used to shape how people cooperate in games. Most co-op games are played on identical gamepads, where each player can in principle act on their own.</p>
+      <p>We asked: <strong>does a tangible interface designed to enforce positive interdependence promote collaboration more than traditional input?</strong></p>
+
+      <h2>My role</h2>
+      <p>One of six in the project group, working across research, game design, hardware and evaluation.</p>
+      <p class="todo">Describe what you personally did — e.g. which parts of the controllers, the Unity code or the study you owned, and any decisions you drove.</p>
+
+      <h2>How we built it</h2>
+      <h3>The game</h3>
+      <p>SpellBound is a two-player co-op game set in a medieval hellscape. Players share one point of view and one health pool, and defeat enemies by matching the symbol combos shown above them. Each controller has a set of shared symbols plus one symbol unique to its player, and some spells need both players to act at the same moment.</p>
+      <p>The rules are designed to force conversation: only one enemy can be targeted at a time, healing locks out attacks, and a streak of correct combos triggers a stronger spell — a reward for coordinating well. The game went from paper prototype, to digital prototype, to a final Unity build with new visuals and spell effects.</p>
+
+      <figure class="figure figure--pair">
+        <div class="figure__grid">
+          <img src="../assets/img/spellbound-orb.jpg" alt="An assembled O.R.B. controller: a dark green sphere with star and moon symbols and a glowing green LED ring." loading="lazy" width="1200" height="1600">
+          <img src="../assets/img/spellbound-orb-open.jpg" alt="An O.R.B. controller opened into two halves, showing the electronics, rotary encoder and LED strip inside." loading="lazy" width="1600" height="1200">
+        </div>
+        <figcaption>The final O.R.B.S. — two 3D-printed halves that rotate to align symbols and press together to cast.</figcaption>
+      </figure>
+
+      <h3>The controllers</h3>
+      <p>Each O.R.B. is a 3D-printed sphere made of two interlocking halves with the game’s symbols embossed on them. Players rotate the halves to line up a symbol pair, then press them together to confirm. Inside, an M5Stamp S3 (ESP32) reads a rotary encoder for rotation and press, lights an LED ring green or red depending on whether the alignment is valid, and fires a haptic pulse on confirm.</p>
+      <p>The orbs send their state over ESP-NOW to a receiver ESP32, which passes it to Unity over USB serial. An input layer in Unity let the same game run on both the orbs and regular gamepads — essential for a fair comparison.</p>
+      <ul class="list">
+        <li>Swapped a potentiometer for a rotary encoder to get full 360° rotation and a built-in push button.</li>
+        <li>Moved from a SparkFun ESP32 Thing Plus with two Li-Po cells to an M5Stamp S3 with a boost-converter breakout, to fit 5 V parts inside the sphere.</li>
+        <li>Clamped the encoder’s ever-increasing count with modulo arithmetic so each rotation maps cleanly onto the in-game symbols.</li>
+      </ul>
+
+      <figure class="figure">
+        <img src="../assets/img/placeholder.svg" alt="Placeholder — replace with a photo of players testing SpellBound with the orbs." loading="lazy" width="1600" height="1000">
+        <figcaption>Placeholder — swap in a photo from the user study or the paper prototype.</figcaption>
+      </figure>
+
+      <h2>Outcome</h2>
+      <p>We ran a between-subjects study: pairs played SpellBound with either the O.R.B.S. or standard gamepads. Collaboration was measured with questionnaires (CCSS before; GEQ and SPGQ after), behavioural markers coded from gameplay recordings, and a Prisoner’s Dilemma game.</p>
+      <div class="stat-row">
+        <div class="stat"><b>52.5 vs 30</b><span>Mean Prisoner’s Dilemma score, orbs vs gamepads</span></div>
+        <div class="stat"><b>More explicit</b><span>verbal coordination in the orb group</span></div>
+        <div class="stat"><b>Stronger</b><span>reported group bonding and interdependence</span></div>
+      </div>
+      <p>Across the tests, the orb group generally collaborated more: they talked through their moves explicitly, while gamepad players relied more on implicit coordination. The direction was consistent, but the sample lacked the statistical power to confirm the hypothesis — the results point to custom controllers as a way to design for specific teamwork behaviours.</p>
+      <p class="todo">Add the grade (if you want to share it) and one or two things you learned.</p>
+
+      <h2>Video</h2>
+      <!-- Upload the AV production to YouTube or Vimeo, then replace the placeholder below with e.g.:
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="SpellBound video" allow="fullscreen" loading="lazy"></iframe></div>
+      -->
+      <div class="video-frame video-frame--placeholder">
+        <p>Video placeholder — upload the AV production to YouTube or Vimeo and embed it here.</p>
+      </div>
+
+      <h2>Links</h2>
+      <div class="case-links">
+        <a class="btn" href="https://github.com/Marcelkress/P6_Bachelor_WomboCombo" target="_blank" rel="noopener">Code on GitHub <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="../assets/reports/spellbound-bachelor-thesis.pdf" target="_blank" rel="noopener">Thesis (PDF) <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="#" aria-disabled="true">Video — coming soon</a>
+      </div>
+    </article>
+
+    <div class="container">
+      <nav class="next-project" aria-label="Next project">
+        <a href="tacet-vr.html">
+          <p class="eyebrow">Next project</p>
+          <strong>TACET VR <span aria-hidden="true">→</span></strong>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> Søren Lasskogen</span>
+      <a href="mailto:sorenlasskogen@gmail.com">sorenlasskogen@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IPASIF — Søren Lasskogen</title>
+  <meta name="description" content="A modular, wireless framework for building interactive sound installations with ESP32, Pure Data and TouchDesigner.">
+  <meta name="theme-color" content="#0F0F0F">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">Søren Lasskogen</a>
+      <nav class="nav" aria-label="Main">
+        <a href="../index.html#projects" aria-current="true">Projects</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="case-intro container">
+      <a class="back-link" href="../index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+      <p class="eyebrow" style="margin-top:48px"><span class="accent">04</span> — Interactive sound · 2025</p>
+      <h1>IPASIF</h1>
+      <p class="lede">A framework for creating interactive sound installations — wireless, modular, and built so artists can plug in sensors and start playing.</p>
+      <ul class="tags" aria-label="Tools used">
+        <li>ESP32</li><li>ESP-NOW</li><li>OSC</li><li>Pure Data</li><li>TouchDesigner</li><li>MediaPipe</li>
+      </ul>
+    </section>
+
+    <div class="container">
+      <figure class="case-hero">
+        <img src="../assets/img/ipasif-projection.jpg" alt="Two people holding small controllers in front of a large blue projection of flowing, liquid-like patterns." width="1600" height="891">
+      </figure>
+
+      <dl class="facts">
+        <div><dt>Context</dt><dd>4th-semester project, Medialogy — theme: Interactive sound systems</dd></div>
+        <div><dt>Timeline</dt><dd>Feb – May 2025</dd></div>
+        <div><dt>Team</dt><dd>6 people</dd></div>
+        <div><dt>Supervision</dt><dd>Daniel Overholt</dd></div>
+        <div><dt>Built with</dt><dd>ESP32, ESP-NOW, OSC/UDP, Pure Data, TouchDesigner, MediaPipe, BNO055 IMU, distance sensors, laser cutting, 3D printing</dd></div>
+      </dl>
+    </div>
+
+    <article class="case-body container narrow">
+      <h2>The problem</h2>
+      <p>Interactive sound installations usually need a lot of custom electronics and code, which puts them out of reach for many artists. We started out building a kit for shop-window installations; it grew into a broader framework, focused on wireless communication and modularity, that sound artists can build on.</p>
+
+      <h2>My role</h2>
+      <p>One of six in the project group, working across hardware, software and artist evaluation.</p>
+      <p class="todo">Describe what you personally did — e.g. the ESP32 firmware, the Pure Data patches, the TouchDesigner visuals or the artist interviews.</p>
+
+      <h2>How we built it</h2>
+      <p>Each sensor sits on its own ESP32. Sender boards stream readings over ESP-NOW to a host board, which forwards them as OSC messages to Pure Data for sound synthesis and TouchDesigner for visuals. Because everything is wireless, an installation can grow in both physical size and number of sensors. We built three use cases to show what the framework can do:</p>
+      <ul class="list">
+        <li><strong>Spaceship</strong> — a thumbstick and a touch slider fire up an engine, jump to warp speed and coast through space in a synthesised soundscape.</li>
+        <li><strong>Ballin’</strong> — a throwable ball with a BNO055 motion sensor, an ESP32-S2 and a rechargeable battery in a 3D-printed case. Passing it around continuously reshapes the music.</li>
+        <li><strong>What’s in the Box</strong> — the motion sensor inside a wooden box, plus two distance sensors that control low- and high-pass filters and the colour of the visuals.</li>
+      </ul>
+
+      <figure class="figure">
+        <img src="../assets/img/ipasif-hardware.jpg" alt="Laser-cut wooden enclosures with ultrasonic distance sensors, an ESP32 board and a box labelled 'top' containing a motion sensor." loading="lazy" width="1600" height="894">
+        <figcaption>Hardware for “What’s in the Box”: two distance-sensor modules and the motion-sensing box.</figcaption>
+      </figure>
+
+      <p>We also explored camera-based input with MediaPipe in TouchDesigner, and refined the framework through three meetings with artists during the semester.</p>
+
+      <figure class="figure">
+        <img src="../assets/img/placeholder.svg" alt="Placeholder — replace with a photo of the Ballin' ball or the Spaceship setup." loading="lazy" width="1600" height="1000">
+        <figcaption>Placeholder — swap in a photo of the Ballin’ ball or the Spaceship setup.</figcaption>
+      </figure>
+
+      <h2>Outcome</h2>
+      <div class="stat-row">
+        <div class="stat"><b>44 ms</b><span>Average latency in stress tests</span></div>
+        <div class="stat"><b>3</b><span>Working use cases</span></div>
+        <div class="stat"><b>2</b><span>Use cases evaluated with artists</span></div>
+      </div>
+      <p>Artists tried two of the use cases and were interviewed afterwards. Key themes were playful, creative exploration; some confusion about exactly what the framework can do and a wish for more control; potential for social interaction; flexibility beyond sound installations; and creative inspiration. Stress tests also showed satisfactory wireless range.</p>
+      <p>In its current form the framework suits technically confident artists, or artists working with a technical collaborator. More sensor types, lower latency, a GUI and better documentation are the next steps.</p>
+      <p class="todo">Add the grade (if you want to share it) and one or two things you learned.</p>
+
+      <h2>Video</h2>
+      <!-- Upload the AV production to YouTube or Vimeo, then replace the placeholder below with e.g.:
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="IPASIF video" allow="fullscreen" loading="lazy"></iframe></div>
+      -->
+      <div class="video-frame video-frame--placeholder">
+        <p>Video placeholder — upload the AV production to YouTube or Vimeo and embed it here.</p>
+      </div>
+
+      <h2>Links</h2>
+      <div class="case-links">
+        <a class="btn" href="https://github.com/fnorre23/Framework-for-sound-installations" target="_blank" rel="noopener">Code on GitHub <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="../assets/reports/ipasif-report.pdf" target="_blank" rel="noopener">Report (PDF) <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="#" aria-disabled="true">Video — coming soon</a>
+      </div>
+    </article>
+
+    <div class="container">
+      <nav class="next-project" aria-label="Next project">
+        <a href="spellbound.html">
+          <p class="eyebrow">Next project</p>
+          <strong>SpellBound &amp; the O.R.B.S. <span aria-hidden="true">→</span></strong>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> Søren Lasskogen</span>
+      <a href="mailto:sorenlasskogen@gmail.com">sorenlasskogen@gmail.com</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>

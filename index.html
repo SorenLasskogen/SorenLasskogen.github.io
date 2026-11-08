@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Søren Lasskogen — Medialogy graduate</title>
+  <meta name="description" content="Portfolio of Søren Lasskogen, Medialogy graduate from Aalborg University Copenhagen — interactive installations, tangible interfaces and VR.">
+  <meta name="theme-color" content="#0F0F0F">
+  <meta property="og:title" content="Søren Lasskogen — Medialogy graduate">
+  <meta property="og:description" content="Interactive installations, tangible interfaces and VR.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#projects">Skip to projects</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top">Søren Lasskogen</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero container" aria-label="Introduction">
+      <p class="eyebrow">Portfolio <span class="accent">/</span> 2026</p>
+      <h1 class="hero__name">Søren<br>Lasskogen</h1>
+      <p class="hero__title">Medialogy graduate — interactive installations, tangible interfaces &amp; VR.</p>
+      <p class="hero__sub">BSc Medialogy, Aalborg University Copenhagen</p>
+      <nav class="hero__links" aria-label="Sections">
+        <a href="#projects">Projects <span aria-hidden="true">↓</span></a>
+        <a href="#about">About <span aria-hidden="true">↓</span></a>
+        <a href="#contact">Contact <span aria-hidden="true">↓</span></a>
+      </nav>
+    </section>
+
+    <!-- ============ PROJECTS ============
+         Each <article class="project"> is one project.
+         Copy an article to add a new project; link it to a page in /projects/.
+    -->
+    <section id="projects" class="projects container" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title">Selected projects</h2>
+        <span class="eyebrow">04 projects</span>
+      </div>
+
+      <!-- Project 01 -->
+      <article class="project">
+        <div class="project__info reveal">
+          <p class="eyebrow"><span class="accent">01</span> — Bachelor thesis · 2026</p>
+          <h3 class="project__title"><a href="projects/spellbound.html">SpellBound &amp; the O.R.B.S.</a></h3>
+          <p class="project__desc">Two custom 3D-printed controllers and a co-op game built around them. To cast a spell, both players have to twist their orb to the right symbols and press it together — neither can win alone. The thesis tested whether tangible interfaces like these make people collaborate more than ordinary gamepads.</p>
+          <ul class="tags" aria-label="Tools used">
+            <li>Unity</li><li>C#</li><li>ESP32</li><li>ESP-NOW</li><li>3D printing</li><li>User study</li>
+          </ul>
+          <a class="text-link" href="projects/spellbound.html">View project <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="project__media reveal">
+          <a class="wide" href="projects/spellbound.html" tabindex="-1" aria-hidden="true"><img src="assets/img/spellbound-game.jpg" alt="" loading="lazy" width="1600" height="838"></a>
+          <a class="half" href="projects/spellbound.html" tabindex="-1" aria-hidden="true"><img src="assets/img/spellbound-orb.jpg" alt="" loading="lazy" width="1200" height="1600" style="object-position: 50% 55%"></a>
+          <a class="half" href="projects/spellbound.html" tabindex="-1" aria-hidden="true"><img src="assets/img/spellbound-orb-open.jpg" alt="" loading="lazy" width="1600" height="1200"></a>
+        </div>
+      </article>
+
+      <!-- Project 02 -->
+      <article class="project">
+        <div class="project__info reveal">
+          <p class="eyebrow"><span class="accent">02</span> — Virtual reality · 2025</p>
+          <h3 class="project__title"><a href="projects/tacet-vr.html">TACET VR</a></h3>
+          <p class="project__desc">An immersive VR extension of TACET, a short film by director Ahmed El Kholy, made in close collaboration with him. Instead of watching the story from the outside, you step into the protagonist’s world through environmental storytelling, spatial audio and cinematic lighting.</p>
+          <ul class="tags" aria-label="Tools used">
+            <li>Unity</li><li>C#</li><li>Meta Quest 3</li><li>XR Interaction Toolkit</li><li>FMOD</li><li>Blender</li>
+          </ul>
+          <a class="text-link" href="projects/tacet-vr.html">View project <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="project__media reveal">
+          <a class="wide" href="projects/tacet-vr.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tacet-bedroom.jpg" alt="" loading="lazy" width="1600" height="899"></a>
+          <a class="half" href="projects/tacet-vr.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tacet-hands.jpg" alt="" loading="lazy" width="1600" height="886"></a>
+          <a class="half" href="projects/tacet-vr.html" tabindex="-1" aria-hidden="true"><img src="assets/img/tacet-forest.jpg" alt="" loading="lazy" width="1600" height="905"></a>
+        </div>
+      </article>
+
+      <!-- Project 03 -->
+      <article class="project">
+        <div class="project__info reveal">
+          <p class="eyebrow"><span class="accent">03</span> — Interactive installation · 2025</p>
+          <h3 class="project__title"><a href="projects/walking-on-water.html">Walking on Water</a></h3>
+          <p class="project__desc">An interactive floor projection that follows you. A ceiling camera tracks your position with a YOLO model, a bubble of light moves under your feet, and where you stand reshapes an underwater soundscape. Clap or shout, and the water pulses.</p>
+          <ul class="tags" aria-label="Tools used">
+            <li>Python</li><li>YOLO11</li><li>OpenCV</li><li>TouchDesigner</li><li>Ableton Live</li><li>OSC</li>
+          </ul>
+          <a class="text-link" href="projects/walking-on-water.html">View project <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="project__media reveal">
+          <a class="tall" href="projects/walking-on-water.html" tabindex="-1" aria-hidden="true"><img src="assets/img/wow-floor-1.jpg" alt="" loading="lazy" width="950" height="1024"></a>
+          <a class="tall" href="projects/walking-on-water.html" tabindex="-1" aria-hidden="true"><img src="assets/img/wow-floor-2.jpg" alt="" loading="lazy" width="969" height="1025"></a>
+        </div>
+      </article>
+
+      <!-- Project 04 -->
+      <article class="project">
+        <div class="project__info reveal">
+          <p class="eyebrow"><span class="accent">04</span> — Interactive sound · 2025</p>
+          <h3 class="project__title"><a href="projects/ipasif.html">IPASIF</a></h3>
+          <p class="project__desc">A modular, wireless framework that helps artists build interactive sound installations. Sensors on ESP32 boards stream data into Pure Data for sound and TouchDesigner for visuals — so a thrown ball, a turned box or a slider can play the room.</p>
+          <ul class="tags" aria-label="Tools used">
+            <li>ESP32</li><li>ESP-NOW</li><li>OSC</li><li>Pure Data</li><li>TouchDesigner</li><li>MediaPipe</li>
+          </ul>
+          <a class="text-link" href="projects/ipasif.html">View project <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="project__media reveal">
+          <a class="wide" href="projects/ipasif.html" tabindex="-1" aria-hidden="true"><img src="assets/img/ipasif-projection.jpg" alt="" loading="lazy" width="1600" height="891"></a>
+          <a class="wide" href="projects/ipasif.html" tabindex="-1" aria-hidden="true"><img src="assets/img/ipasif-hardware.jpg" alt="" loading="lazy" width="1600" height="894"></a>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about section container" aria-labelledby="about-title">
+      <div class="section-head">
+        <h2 id="about-title">About</h2>
+      </div>
+
+      <div class="about__row reveal">
+        <h3>Bio</h3>
+        <div>
+          <!-- Add your bio here (3–5 sentences), then delete the to-do line below. Example:
+          <p class="about__bio">I’m a Medialogy graduate who builds things people can touch, walk on and step into …</p>
+          -->
+          <p class="todo">Write a short bio (3–5 sentences): who you are, what you like to build, and what you’re looking for next.</p>
+        </div>
+      </div>
+
+      <div class="about__row reveal">
+        <h3>Education</h3>
+        <div class="edu">
+          <span class="edu__degree">Bachelor of Science in Medialogy</span>
+          <span class="edu__school">Aalborg University Copenhagen</span>
+          <span class="edu__years">2023 – 2026</span>
+        </div>
+      </div>
+
+      <div class="about__row reveal">
+        <h3>Skills</h3>
+        <div class="skills">
+          <div>
+            <h4>Languages</h4>
+            <ul>
+              <li>C#</li><li>Python</li><li>Flutter</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Tools &amp; frameworks</h4>
+            <ul>
+              <li>TouchDesigner</li><li>Unity</li><li>Blender</li><li>Photoshop</li><li>Figma</li><li>Git</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Other</h4>
+            <ul>
+              <li>Visual art</li><li>Installation art</li><li>3D art</li><li>Embedded systems development</li><li>Software development</li><li>UX research</li><li>Data analysis</li><li>Project management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact section container" aria-labelledby="contact-title">
+      <div class="section-head">
+        <h2 id="contact-title">Contact</h2>
+      </div>
+      <p class="contact__lead">Have a project, a role or just a question? The quickest way to reach me is email.</p>
+      <a class="contact__email" href="mailto:sorenlasskogen@gmail.com">sorenlasskogen@gmail.com</a>
+      <div class="contact__links">
+        <!-- Replace YOUR-HANDLE / YOUR-USERNAME with your real profile links -->
+        <a class="btn btn--ghost" href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a class="btn btn--ghost" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span data-year>2026</span> Søren Lasskogen</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
